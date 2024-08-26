@@ -1,0 +1,15 @@
+<div id="info-weather">
+  <form (ngSubmit)="onSubmit()">
+    <label for="miInput">Introduce un valor:</label>
+    <input
+      id="miInput"
+      type="text"
+      [(ngModel)]="ubicacion"
+      name="ubicacion"
+      required
+    />
+  </form>
+  <div id="data">
+    {{ datos.resolvedAddress }}
+  </div>
+</div>

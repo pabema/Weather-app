@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body,
+html,
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100svb;
+}
+
+body {
+  background: rgb(205, 50, 50);
+  background: linear-gradient(
+    13deg,
+    rgba(205, 50, 50, 1) 0%,
+    rgba(255, 214, 0, 1) 100%
+  );
+  overflow: hidden;
+}
+
+app-root {
+  height: 100vh;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
