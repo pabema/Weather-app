@@ -1,4 +1,11 @@
 <div id="info-weather">
+  <div id="current_weather">
+    {{ datos.resolvedAddress || "Canals, Valencia" }}
+    <div class="weather">
+      <img [src]="image_display" alt="" />
+      {{ datos.currentConditions?.temp + "ºC" || "37ºC" }}
+    </div>
+  </div>
   <form (ngSubmit)="onSubmit()">
     <label for="miInput">Introduce un valor:</label>
     <input
@@ -9,7 +16,4 @@
       required
     />
   </form>
-  <div id="data">
-    {{ datos.resolvedAddress }}
-  </div>
 </div>

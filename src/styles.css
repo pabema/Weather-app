@@ -33,4 +33,15 @@ app-root {
 
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+app-info-weather {
+  flex: 1;
+  width: 100%;
+}
+
+app-weather-forecast {
+  flex: 1;
+  width: 100%;
 }
