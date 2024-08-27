@@ -1,4 +1,93 @@
 #info-weather {
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
+  height: 100%;
+  gap: 2em;
+}
+
+#current_weather {
+  background: url("/assets/backgrounds/clear-day.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+
+  border-radius: 10px;
+  padding: 1em;
+}
+
+#current_weather .location {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+
+  margin-bottom: 1em;
+}
+
+#current_weather img {
+  width: 6em;
+}
+
+#current_weather > .location > svg {
+  color: rgb(223, 25, 25);
+  width: 2rem;
+  height: auto;
+}
+
+#current_weather .weather {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3em;
+}
+
+#current_weather .weather > .temperature {
+  display: flex;
+}
+
+#current_weather .weather > .conditions {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+}
+
+#current_weather .extra_conditions {
+  display: flex;
+}
+
+#current_weather .extra_conditions > p {
+  margin-right: 1em;
+  font-size: 1.2rem;
+}
+
+#current_weather .weather > .conditions > p:nth-child(1) {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+#current_weather .weather > .conditions > p {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+#current_weather .weather p {
+  font-size: 6em;
+  font-weight: 300;
+}
+
+.div_form {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.daily_forecast {
+  display: flex;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }

@@ -16,12 +16,7 @@ html {
 }
 
 body {
-  background: rgb(205, 50, 50);
-  background: linear-gradient(
-    13deg,
-    rgba(205, 50, 50, 1) 0%,
-    rgba(255, 214, 0, 1) 100%
-  );
+  background: rgb(38, 35, 88);
   overflow: hidden;
 }
 
@@ -39,9 +34,11 @@ app-root {
 app-info-weather {
   flex: 1;
   width: 100%;
+  padding: 1em;
 }
 
 app-weather-forecast {
   flex: 1;
   width: 100%;
+  padding: 1em;
 }
