@@ -1,5 +1,5 @@
 <div id="info-weather">
-  <div id="current_weather">
+  <div id="current_weather" #current_weather>
     <div class="location">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -13,24 +13,25 @@
           d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
         />
       </svg>
-      {{ datos.resolvedAddress || "Canals, Valencia" }}
+      {{ datos_completos.resolvedAddress || "Canals, Valencia" }}
     </div>
 
     <div class="weather">
       <div class="temperature">
         <img [src]="image_display" alt="" />
         <!-- <img src="/assets/icons/clear-day.svg" alt="" /> -->
-        <p>{{ datos.currentConditions?.temp | round }}ºC</p>
+        <p>{{ datos.temp | round }}ºC</p>
       </div>
       <div class="conditions">
+        <p *ngIf="datos">{{ dia }}</p>
         <p>Weather:</p>
-        <p>{{ datos.currentConditions?.conditions }}</p>
+        <p>{{ datos.conditions }}</p>
       </div>
     </div>
     <div class="extra_conditions">
-      <p>Rain: {{ datos.currentConditions?.precipprob || 0 }}%</p>
-      <p>Humidity: {{ datos.currentConditions?.humidity }}%</p>
-      <p>Wind: {{ datos.currentConditions?.windspeed }}Km/h</p>
+      <p>Rain: {{ datos.precipprob || 0 }}%</p>
+      <p>Humidity: {{ datos.humidity }}%</p>
+      <p>Wind: {{ datos.windspeed }}Km/h</p>
     </div>
   </div>
   <div class="div_form">
@@ -46,14 +47,28 @@
         />
       </form>
       <div class="ejemplos">
-        <button>Get a random location forecast</button>
+        <button (click)="obtenerCiudadRandom()">
+          Get a random location forecast
+        </button>
       </div>
     </div>
     <div class="daily_forecast">
-      <app-daily-forecast
-        [datos_diarios]="item"
-        *ngFor="let item of datos.days"
-      ></app-daily-forecast>
+      <h2>Forecast</h2>
+      <div class="scroll_days">
+        <button (click)="scrollLeft()" class="button_left">
+          <span class="material-symbols-rounded"> arrow_back_ios </span>
+        </button>
+        <div class="days" #scrollContainer>
+          <app-daily-forecast
+            [datos_diarios]="item"
+            *ngFor="let item of datos_completos.days; let i = index"
+            (click)="cambiarDatos(i)"
+          ></app-daily-forecast>
+        </div>
+        <button (click)="scrollRight()" class="button_right">
+          <span class="material-symbols-rounded"> arrow_forward_ios </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>

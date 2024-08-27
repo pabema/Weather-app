@@ -13,7 +13,7 @@ export class RequestService {
     })
       .then((response) => response.json())
       .then((datos) => {
-        console.log(datos);
+        // console.log(datos);
         return datos;
       });
   }

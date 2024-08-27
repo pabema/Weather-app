@@ -9,7 +9,7 @@
 #current_weather {
   background: url("/assets/backgrounds/clear-day.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   flex: 1;
 
@@ -85,9 +85,63 @@
   overflow-x: hidden;
 }
 
+.busqueda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#miInput {
+  font-size: 1.1rem;
+  padding: 0.2em;
+}
+
+#miInput:focus {
+  outline: none;
+}
+
 .daily_forecast {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.days {
   display: flex;
   width: 100%;
   overflow-y: hidden;
   overflow-x: scroll;
+  height: 100%;
+
+  gap: 1em;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  /* Para navegadores WebKit (Chrome, Safari, etc.) */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.ejemplos > button {
+  padding: 0.6em;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.scroll_days {
+  display: flex;
+  height: 100%;
+}
+
+.button_left,
+.button_right {
+  background: none;
+  border: none;
+  cursor: pointer;
 }

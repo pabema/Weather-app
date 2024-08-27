@@ -1,2 +1,10 @@
-<app-info-weather></app-info-weather>
-<app-weather-forecast></app-weather-forecast>
+<app-info-weather
+  (dataChanged)="updateChartData($event)"
+  (dataChanged2)="updateChartData2($event)"
+  (warnings)="updateWarning($event)"
+></app-info-weather>
+<app-weather-forecast
+  [data]="chartData"
+  [data2]="chartData2"
+  [warning]="warningData"
+></app-weather-forecast>

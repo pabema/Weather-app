@@ -1,4 +1,11 @@
-<div *ngIf="datos_diarios">
+<div *ngIf="datos_diarios" class="card_weather_day">
   <img [src]="imagen" alt="" class="daily_img" />
-  {{ datos_diarios?.datetime }}
+  <div class="content_diario">
+    <p>{{ dia }}</p>
+    <div class="temperaturas">
+      <p class="max">{{ datos_diarios.tempmax | round }}º</p>
+      <div class="separador_temp"></div>
+      <p class="min">{{ datos_diarios.tempmin | round }}º</p>
+    </div>
+  </div>
 </div>

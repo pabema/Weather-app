@@ -1,1 +1,26 @@
-<p>weather-forecast works!</p>
+<div
+  class="weather_forecast"
+  style="
+    width: 800px;
+    gap: 0.5em;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  "
+>
+  <h2>Temperature graph</h2>
+  <canvas #chartCanvas id="ctx"></canvas>
+</div>
+<div *ngIf="warning.length > 0; else no_warning" class="hay_alertas">
+  <h2>Actual Warnings</h2>
+  <div *ngFor="let item of warning" class="alerta">
+    <span class="material-symbols-rounded"> warning </span>
+    {{ item.headline || item.event }}
+  </div>
+</div>
+<ng-template #no_warning>
+  <div class="alertas">
+    <span class="material-symbols-rounded"> warning </span>
+    <p>No hay alertas en la zona buscada</p>
+  </div>
+</ng-template>
