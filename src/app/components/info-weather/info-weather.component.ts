@@ -54,7 +54,7 @@ export class InfoWeatherComponent implements OnInit {
     let data: any[] | undefined = [];
     let temp: any[] | undefined = [];
     datos.map((hora: any, index: number) => {
-      console.log(hora.datetime);
+      // console.log(hora.datetime);
       if (index % 2 == 0) {
         temp.push(hora.temp);
         data.push(hora.datetime.substring(0, 5));
@@ -77,7 +77,7 @@ export class InfoWeatherComponent implements OnInit {
         this.dia = this.obtenerDiaSemana(this.datos?.datetime);
         this.sendData();
         this.updateBackgroundBasedOnWeather();
-        console.log(this.datos_completos);
+        // console.log(this.datos_completos);
       },
       (error: any) => {
         console.error('Error al obtener los datos:', error);
@@ -119,7 +119,7 @@ export class InfoWeatherComponent implements OnInit {
 
   obtenerCiudadRandom() {
     this.ubicacion = this.getRandomCity();
-    console.log(this.ubicacion);
+    // console.log(this.ubicacion);
     this.obtenerDatosCiudad(0);
   }
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;

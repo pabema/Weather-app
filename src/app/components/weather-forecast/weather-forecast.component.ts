@@ -29,7 +29,7 @@ export class WeatherForecastComponent implements OnChanges, AfterViewInit {
   ngOnChanges(changes: SimpleChanges): void {
     if (this.chart && (changes['data'] || changes['data2'])) {
       this.updateChart(); // Actualiza el gráfico si hay cambios en los datos
-      console.log(this.warning); // Muestra advertencias en la consola
+      // console.log(this.warning); // Muestra advertencias en la consola
     }
   }
 
