@@ -12,6 +12,10 @@ html,
 
 body {
   background: linear-gradient(135deg, #00307d, #00aeff);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
 }
 
 app-root {

@@ -1,6 +1,6 @@
 <div id="info-weather">
   <div id="current_weather" #current_weather>
-    <div class="location">
+    <div class="location" *ngIf="datos_completos.resolvedAddress">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
@@ -14,26 +14,23 @@
         />
       </svg>
       <p>
-        {{
-          datos_completos.resolvedAddress ||
-            "Canals, Valencia, Comunidad Valenciana, España, Europa"
-        }}
+        {{ datos_completos.resolvedAddress }}
       </p>
     </div>
 
     <div class="weather">
       <div class="temperature">
-        <img [src]="image_display" alt="" />
+        <img *ngIf="image_display" [src]="image_display" alt="" />
         <!-- <img src="/assets/icons/clear-day.svg" alt="" /> -->
-        <p>{{ datos.temp | round }}ºC</p>
+        <p *ngIf="datos.temp">{{ datos.temp | round }}ºC</p>
       </div>
-      <div class="conditions">
-        <p *ngIf="datos">{{ dia }}</p>
+      <div class="conditions" *ngIf="dia">
+        <p>{{ dia }}</p>
         <p>Weather:</p>
         <p>{{ datos.conditions }}</p>
       </div>
     </div>
-    <div class="extra_conditions">
+    <div class="extra_conditions" *ngIf="datos.precipprob">
       <p>Rain: {{ datos.precipprob || 0 }}%</p>
       <p>Humidity: {{ datos.humidity }}%</p>
       <p>Wind: {{ datos.windspeed }}Km/h</p>
