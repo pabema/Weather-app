@@ -20,16 +20,16 @@ export class AppComponent {
   updateChartData(data: any[]): void {
     this.chartData = data;
 
-    console.log(this.chartData);
+    // console.log(this.chartData);
   }
 
   updateChartData2(data: any[]): void {
     this.chartData2 = data;
-    console.log(this.chartData2);
+    // console.log(this.chartData2);
   }
 
   updateWarning(data: any[]): void {
     this.warningData = data;
-    console.log(this.warningData);
+    // console.log(this.warningData);
   }
 }

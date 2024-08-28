@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { RequestService } from '../../services/request.service';
 import { RoundPipe } from '../../pipes/round.pipe';
 import { DailyForecastComponent } from '../daily-forecast/daily-forecast.component';
+import { API_KEY } from '../../../../key';
 
 @Component({
   selector: 'app-info-weather',
@@ -67,8 +68,7 @@ export class InfoWeatherComponent implements OnInit {
   }
 
   obtenerDatosCiudad(index: number) {
-    // console.log(this.ubicacion);
-    let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${this.ubicacion}?unitGroup=metric&key=GU79KU3ZKLN4855LDJD4RV9CZ&contentType=json`;
+    let url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${this.ubicacion}?unitGroup=metric&key=${API_KEY}&contentType=json`;
     this.req.getInfoWeather(url).then(
       (response: any) => {
         this.datos = response.days[index];
