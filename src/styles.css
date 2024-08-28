@@ -11,7 +11,7 @@ html,
 }
 
 body {
-  background: rgb(38, 35, 88);
+  background: linear-gradient(135deg, #00307d, #00aeff);
 }
 
 app-root {
@@ -40,5 +40,6 @@ app-weather-forecast {
 @media only screen and (max-width: 600px) {
   app-weather-forecast {
     flex-direction: column;
+    gap: 1em;
   }
 }

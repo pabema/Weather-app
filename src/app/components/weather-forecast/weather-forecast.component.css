@@ -31,10 +31,10 @@
 }
 
 .alerta {
-  background-color: rgb(255, 21, 21);
+  background-color: rgb(255, 75, 75);
   border-radius: 10px;
   padding: 0.5em 1em;
-  border: 1px solid rgb(222, 1, 1);
+  border: 1px solid rgb(155, 5, 5);
   display: flex;
   align-items: center;
   gap: 1em;

@@ -70,6 +70,19 @@ export class WeatherForecastComponent implements OnChanges, AfterViewInit {
             },
           },
           scales: {
+            x: {
+              ticks: {
+                color: 'white',
+              },
+              grid: {
+                color: function (context) {
+                  if (context.tick.value === 0) {
+                    return 'white';
+                  }
+                  return 'rgba(0, 0, 0, 0.1)';
+                },
+              },
+            },
             y: {
               min:
                 Math.round(Math.min(...this.data2)) < 0
@@ -80,6 +93,17 @@ export class WeatherForecastComponent implements OnChanges, AfterViewInit {
                   ? 0
                   : Math.round(Math.max(...this.data2)) + 10, // Ajusta el máximo si es necesario
               beginAtZero: true, // Asegúrate de que este ajuste esté en `false` si no quieres que comience en 0
+              ticks: {
+                color: 'white',
+              },
+              grid: {
+                color: function (context) {
+                  if (context.tick.value === 0) {
+                    return 'white';
+                  }
+                  return 'rgba(0, 0, 0, 0.1)';
+                },
+              },
             },
           },
         },
