@@ -10,18 +10,11 @@ html,
   box-sizing: border-box;
 }
 
-body,
-html {
-  height: 100svb;
-}
-
 body {
   background: rgb(38, 35, 88);
-  overflow: hidden;
 }
 
 app-root {
-  height: 100vh;
   display: inline-block;
   width: 100%;
   display: flex;
@@ -42,4 +35,10 @@ app-weather-forecast {
   width: 100%;
   padding: 1em;
   display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  app-weather-forecast {
+    flex-direction: column;
+  }
 }

@@ -1,3 +1,7 @@
+* {
+  color: white;
+}
+
 .alertas {
   flex: 1;
   margin: 3em 0em 0em 3em;
@@ -35,4 +39,23 @@
   align-items: center;
   gap: 1em;
   width: 100%;
+  color: black;
+}
+
+.alerta span {
+  color: rgb(155, 5, 5);
+}
+
+@media only screen and (max-width: 600px) {
+  .weather_forecast {
+    width: 100% !important;
+  }
+
+  .alertas {
+    margin: 0;
+  }
+
+  .hay_alertas {
+    margin: 0em;
+  }
 }

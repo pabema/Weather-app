@@ -4,6 +4,8 @@
   overflow: hidden;
   height: 100%;
   gap: 2em;
+
+  color: white;
 }
 
 #current_weather {
@@ -12,9 +14,33 @@
   background-size: contain;
   background-position: center;
   flex: 1;
-
   border-radius: 10px;
   padding: 1em;
+  color: white; /* Color del texto */
+  position: relative; /* Necesario para el pseudo-elemento */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Sombra de texto */
+}
+
+#current_weather img {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+#current_weather::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1); /* Fondo negro semi-transparente */
+  border-radius: 10px; /* Para coincidir con el borde del div */
+  z-index: 1;
+}
+
+#current_weather > * {
+  position: relative;
+  z-index: 2; /* Asegura que el contenido esté encima del fondo semi-transparente */
+  filter: none;
 }
 
 #current_weather .location {
@@ -23,6 +49,15 @@
   font-size: 2rem;
 
   margin-bottom: 1em;
+}
+
+#current_weather .location > p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; /* Número de líneas a mostrar */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es truncado */
+  max-width: 100%; /* Ancho máximo al 100% del contenedor padre */
 }
 
 #current_weather img {
@@ -78,7 +113,6 @@
 
 .div_form {
   flex: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -90,6 +124,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 #miInput {
@@ -144,4 +179,73 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: white;
+}
+
+#form_weather > button {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #info-weather {
+    flex-direction: column;
+  }
+
+  #current_weather .location {
+    font-size: 1.2rem;
+  }
+
+  #current_weather .temperature > img {
+    width: 3em;
+  }
+
+  #current_weather .temperature > p {
+    font-size: 3em;
+  }
+
+  #current_weather .weather .conditions p {
+    font-size: 0.9em;
+  }
+
+  #current_weather .extra_conditions p {
+    font-size: 0.9em;
+  }
+
+  .div_form {
+    gap: 1em;
+  }
+
+  .div_form .busqueda {
+    gap: 1em;
+  }
+
+  .daily_forecast {
+    gap: 1em;
+  }
+
+  .days,
+  .scroll_days {
+    height: 100px;
+  }
+
+  #form_weather {
+    width: 80%;
+    display: flex;
+    gap: 0.5em;
+  }
+
+  #form_weather > button {
+    display: block;
+    padding: 0.6em;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+  }
+
+  #miInput {
+    width: 100%;
+  }
 }
