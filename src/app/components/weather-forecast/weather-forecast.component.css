@@ -4,7 +4,6 @@
 
 .alertas {
   flex: 1;
-  margin: 3em 0em 0em 3em;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 2em;
@@ -18,7 +17,6 @@
 
 .hay_alertas {
   flex: 1;
-  margin: 3em 0em 0em 3em;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 2em;
